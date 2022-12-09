@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Letting, Profile
+from lettings.models import Letting, Address
+from oc_profile.models import Profile
 
 
 
