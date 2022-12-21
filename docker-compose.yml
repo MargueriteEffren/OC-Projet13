@@ -2,10 +2,10 @@ version: '3'
 services:
   web:
     build: .
-    command: ./entrypoint.sh
     volumes:
       -  .:/code
       -  .db_data/db.sqlite3:/db.sqlite3
+    command: ./entrypoint.sh
     restart: always
     ports:
       - "8000:8000"
