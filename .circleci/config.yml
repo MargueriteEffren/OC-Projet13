@@ -46,8 +46,7 @@ jobs:
           # to get the Dockerfile from the current directory.
           # <docker_hub_username/docker-hub-password:version>.
           name: Build Docker image
-          command: docker build -t pascalien/pboireau-p13:latest && docker
-          push pascalien/pboireau-p13:latest
+          command: docker build -t pascalien/pboireau-p13:latest && docker push pascalien/pboireau-p13:latest
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
