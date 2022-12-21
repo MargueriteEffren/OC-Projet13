@@ -21,7 +21,7 @@ jobs:
     # The executor is the environment in which the steps below will be executed - below will use a python 3.10.2 container
     # Change the version below to your required version of python
     docker:
-      - image: cimg/python:3.9.16
+       - image: cimg/python:3.9.16
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
@@ -33,7 +33,7 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pip
+         pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - setup_remote_docker
@@ -42,9 +42,9 @@ jobs:
           command: docker-compose up -d
       - run:
         # Builds a docker image to push to Docker Hub
-				# Tag (-t) pattern is below, where CircleCI
-				# to get the Dockerfile from the current directory.
-        # <docker_hub_username/docker-hub-password:version>.
+          # Tag (-t) pattern is below, where CircleCI
+          # to get the Dockerfile from the current directory.
+          # <docker_hub_username/docker-hub-password:version>.
           name: Build Docker image
           command: docker build -t pascalien/pboireau-p13:latest && docker
           push pascalien/pboireau-p13:latest
