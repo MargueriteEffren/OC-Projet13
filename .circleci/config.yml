@@ -10,6 +10,7 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@2.1.1
+  heroku: circleci/heroku@2.0.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -61,6 +62,20 @@ jobs:
           name: Start all services declared in docker-compose.yml
           command: docker-compose up -d
 
+  heroky_deploy:
+    docker:
+      - image: $DOCKER_USERNAME/$P13_PROJECT:latest
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+    steps:
+        - checkout
+        - run:
+           name: Deploy Main to Heroku
+           command: |
+           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_OC_LETTINGS.git main
+
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -69,3 +84,9 @@ workflows:
     jobs:
       - build-and-test
       - containerize
+      - heroku_deploy:
+         requires:
+          - containerize
+         filters:
+           branches:
+             only: main
