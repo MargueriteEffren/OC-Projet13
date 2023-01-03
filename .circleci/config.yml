@@ -73,7 +73,8 @@ jobs:
         - run:
            name: Deploy Main to Heroku
            command: |
-           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_OC_LETTINGS.git main
+           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_OC_LETTINGS.git
+main
 
 
 # Invoke jobs via workflows
