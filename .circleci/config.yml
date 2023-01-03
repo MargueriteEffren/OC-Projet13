@@ -20,6 +20,22 @@ jobs:
     # A list of available CircleCI Docker convenience images are available here: https://circleci.com/developer/images/image/cimg/python
     # The executor is the environment in which the steps below will be executed - below will use a python 3.10.2 container
     # Change the version below to your required version of python
+    executor: python/default
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Run tests
+          command: python -m pytest
+      - run:
+          name: Run flake8
+          command: python -m flake8
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+  containerize:
     docker:
       - image: cimg/python:3.9.16
         auth:
@@ -32,10 +48,6 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-      - python/install-packages:
-         pkg-manager: pip
-          # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
-          # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - setup_remote_docker
       - run: |
           TAG=$CIRCLE_SHA1
