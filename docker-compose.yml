@@ -5,7 +5,6 @@ services:
     command: sh /code/entrypoint.sh
     volumes:
       -  .:/code
-      -  .db_data/oc-lettings-site.sqlite3:/oc-lettings-site.sqlite3
     restart: always
     ports:
       - "8000:8000"
