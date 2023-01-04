@@ -58,10 +58,7 @@ jobs:
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker push $DOCKER_USERNAME/$P13_PROJECT:$TAG
           docker push $DOCKER_USERNAME/$P13_PROJECT:latest
-      - run:
-          name: Start all services declared in docker-compose.yml
-          command: docker-compose up -d
-
+      
   heroku_deploy:
     docker:
       - image: $DOCKER_USERNAME/$P13_PROJECT:latest
