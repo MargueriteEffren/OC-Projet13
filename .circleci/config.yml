@@ -80,7 +80,7 @@ workflows:
       - build-and-test
       - containerize:
           requires:
-            - build_and_test
+            - build-and-test
           filters:
             branches:
               only: master
