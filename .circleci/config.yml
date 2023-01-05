@@ -68,7 +68,7 @@ jobs:
     steps:
         - checkout
         - run:
-           name: Deploy Main to Heroku
+           name: Deploy Master to Heroku
            command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_OC_LETTINGS.git main
 
 # Invoke jobs via workflows
@@ -81,7 +81,7 @@ workflows:
       - containerize
       - heroku_deploy:
          requires:
-          - containerize
+         - containerize
          filters:
            branches:
-             only: main
+             only: master
