@@ -83,6 +83,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Compte CircleCI
 - Compte DockerHub
 - Docker: pour Windows: `https://docs.docker.com/desktop/install/windows-install/`
+
 pour Mac : `https://docs.docker.com/desktop/install/mac-install/`
 - Compte Heroku
 - Heroku CLI
