@@ -103,7 +103,7 @@ Une fois déployée, l'application est surveillée grâce à Sentry:
 
 Cette CI/CD est mise en place grâce à CircleCI, dans le fichier spécifique config.yml, dont le workflow est :
 
-`workflows:
+```workflows:
   sample: 
     jobs:
       - build-and-test
@@ -119,4 +119,4 @@ Cette CI/CD est mise en place grâce à CircleCI, dans le fichier spécifique co
          filters:
            branches:
              only: master
-`
+```
