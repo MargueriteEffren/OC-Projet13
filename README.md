@@ -125,3 +125,21 @@ Selon ce workflow:
 - le code est testé à chaque push sur github, quelle que soit la branche du repository sur laquelle on travaille
 - l'image Docker est créée uniquement lors des pushs sur la branche master, si et seulement si les tests sont au préalable validés
 - les déploiements vers Heroku n'ont lieu que lors des pushs sur la branche master, si et seulement si les tests sont validés, si et seulement si la conteneurisation Docker a été correctement réalisée
+
+### Workflow
+
+Vu que l'application sera mise en production, il faut définir des variables d'environnement afin de la sécuriser.
+
+- dans CircleCI: 
+
+DOCKER_USERNAME: Nom d'utilisateur du compte Docker
+
+DOCKER_PASSWORD: Mot de passe du compte Docker
+
+HEROKU_API_KEY: clé API du compte Heroku
+
+HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
+
+-dans Heroku:
+
+
