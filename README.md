@@ -120,3 +120,8 @@ Cette CI/CD est mise en place grâce à CircleCI, dans le fichier spécifique co
            branches:
              only: master
 ```
+
+Selon ce workflow:
+- le code est testé à chaque push sur github, quelle que soit la branche du repository sur laquelle on travaille
+- l'image Docker est créée uniquement lors des pushs sur la branche master, si et seulement si les tests sont au préalable validés
+- les déploiements vers Heroku n'ont lieu que lors des pushs sur la branche master, si et seulement si les tests sont validés, si et seulement si la conteneurisation Docker a été correctement réalisée
