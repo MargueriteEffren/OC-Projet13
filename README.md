@@ -126,7 +126,7 @@ Selon ce workflow:
 - l'image Docker est créée uniquement lors des pushs sur la branche master, si et seulement si les tests sont au préalable validés
 - les déploiements vers Heroku n'ont lieu que lors des pushs sur la branche master, si et seulement si les tests sont validés, si et seulement si la conteneurisation Docker a été correctement réalisée
 
-### Workflow
+### Variables d'environnement
 
 Vu que l'application sera mise en production, il faut définir des variables d'environnement afin de la sécuriser.
 
@@ -143,5 +143,9 @@ HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
 - dans Heroku:
 
 SENTRY_DNS: DSN de Sentry
+
+
+
+
 
 
