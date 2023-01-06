@@ -144,7 +144,32 @@ HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
 
 SENTRY_DNS: DSN de Sentry
 
+### Commandes de déploiement:
 
+Dans votre terminal (instructions de Heroku):
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+`$ heroku login`
+
+Clone the repository
+
+Use Git to clone oc-lettings-pb's source code to your local machine.
+
+```$ heroku git:clone -a oc-lettings-pb' 
+
+$ cd oc-lettings-pb
+```
+
+Deploy your changes
+
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+```
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
 
 
 
