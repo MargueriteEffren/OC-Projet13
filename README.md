@@ -142,4 +142,6 @@ HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
 
 - dans Heroku:
 
+SENTRY_DNS: DSN de Sentry
+
 
