@@ -140,6 +140,6 @@ HEROKU_API_KEY: clé API du compte Heroku
 
 HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
 
--dans Heroku:
+- dans Heroku:
 
 
