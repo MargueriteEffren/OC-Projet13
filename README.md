@@ -88,3 +88,35 @@ pour Mac : `https://docs.docker.com/desktop/install/mac-install/`
 - Compte Heroku
 - Heroku CLI
 - Compte Sentry
+
+### Description
+
+Le travail de déploiement consiste en la mise en place d'une Intégration continue/Déploiement continu (CI/CD) suivant 3 étapes :
+- run de tests du code via Pytest et Flake8,
+- Conteneurisation du code, des fichiers de configuration, du fichier requirements.txt, dans une image Docker
+- Déploiement de l'application sur Heroku en utilisant l'image Docker
+
+Une fois déployée, l'application est surveillée grâce à Sentry:
+`https://www.youtube.com/watch?v=4RCKQejULbw`
+
+### Workflow
+
+Cette CI/CD est mise en place grâce à CircleCI, dans le fichier spécifique config.yml, dont le workflow est :
+
+`workflows:
+  sample: 
+    jobs:
+      - build-and-test
+      - containerize:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: master
+      - heroku_deploy:
+         requires:
+         - containerize
+         filters:
+           branches:
+             only: master
+`
