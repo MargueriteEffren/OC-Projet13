@@ -30,7 +30,7 @@ jobs:
           name: Run tests
           command: python -m pytest
       - run:
-          name: Run flake8 but ignore sentre dns length error
+          name: Run flake8 but ignore sentry dns length error if any
           command: python -m flake8 --ignore=E501 ./oc_lettings_site/settings.py:131/100
 
       - persist_to_workspace:
