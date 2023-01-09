@@ -66,7 +66,7 @@ jobs:
     steps:
         - checkout
         - run:
-           name: Deploy Master to Heroku
+           name: Deploy Master Branch to Heroku
            command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_OC_LETTINGS.git master
 
 # Invoke jobs via workflows
