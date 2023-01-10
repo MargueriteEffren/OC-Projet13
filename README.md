@@ -144,31 +144,31 @@ HEROKU_OC_LETTINGS: Nom de l'application dans Heroku
 
 SENTRY_DNS: DSN de Sentry
 
-### Commandes de déploiement:
+### Commandes de déploiement sur Heroku:
+
+L'appli est consultatble à l'adresse https://oc-lettings-pb.herokuapp.com/
+
+Si le site tombe et n'est plus présent à l'adresse:
 
 Dans votre terminal (instructions de Heroku):
 
-If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+Si ce n'est déjà fait, loggez vous à votre compte Heroku et suivez les instructions pour créer une nouvelle clé SSH publique.
 
-`$ heroku login`
+`heroku login`
 
-Clone the repository
+`heroku create oc-lettings-pb`
 
-Use Git to clone oc-lettings-pb's source code to your local machine.
 
-```$ heroku git:clone -a oc-lettings-pb' 
 
-$ cd oc-lettings-pb
-```
+`cd /path/to/Python-OC-Lettings-FR`
 
-Deploy your changes
 
-Make some changes to the code you just cloned and deploy them to Heroku using Git.
+Faites des modifications dans le code que vous avez cloné et déployez les sur heroku en utilisant Git, grâce au fichier de config CircleCi:
 
 ```
 $ git add .
-$ git commit -am "make it better"
-$ git push heroku master
+$ git commit -m "make it better"
+$ git push 
 ```
 
 
