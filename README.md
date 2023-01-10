@@ -166,9 +166,9 @@ Si ce n'est déjà fait, loggez vous à votre compte Heroku et suivez les instru
 Faites des modifications dans le code que vous avez cloné et déployez les sur heroku en utilisant Git, grâce au fichier de config CircleCi:
 
 ```
-$ git add .
-$ git commit -m "make it better"
-$ git push 
+git add .
+git commit -m "make it better"
+git push 
 ```
 
 
