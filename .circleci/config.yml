@@ -29,7 +29,9 @@ jobs:
       - run:
           name: Run tests
           command: python -m pytest
-
+      - run:
+          name: Run flake8
+          command: python -m flake8
       - persist_to_workspace:
           root: ~/project
           paths:
