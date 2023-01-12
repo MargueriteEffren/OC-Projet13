@@ -128,6 +128,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SENTRY_DSN = os.getenv('SENTRY_DSN')
+print(SENTRY_DSN)
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     integrations=[
